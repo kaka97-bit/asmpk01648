@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiển thị giỏ hàng</title>
+
+    <script src="https://kit.fontawesome.com/cbdcd0ca46.js" crossorigin="anonymous"></script>
+    <script src="sanPham.js"></script>
+    <script src="gioHang.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gio_hang.css">
+</head>
+
+<body>
+    <div id="search">
+        <div class="box">
+            <div class="images">
+                <a href="">
+                    <img src="images/logo-mb.png">
+                </a>
+            </div>
+            <div class="tim-kiem">
+                <form>
+                    <input class="search-area" type="text" name="text" placeholder="Nhập sản phẩm cần tìm ...">
+                    <input class="search-btn" type="button" name="submit" value="TÌM KIẾM">
+                </form>
+            </div>
+            <div class="item-icon-gio-hang">
+                <a href="">
+                    <i class="fas fa-cart-arrow-down"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <nav id="nav-bar">
+        <ul class="menu-level-1">
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">ĐIỆN THOẠI</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Apple iPhone</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">SamSung</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Xiaomi</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Oppo</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">TABLE</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Apple iPad</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">SamSung</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">MACBOOK</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Macbook Air</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Macbook pro</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Surface</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">SMART WATCH</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Apple</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">SamSung</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">MÁY CŨ</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Điện thoại</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Table</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Macbook </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">DỊCH VỤ</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Bảo hành, bảo hiểm</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Trả góp</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Thu cũ đổi mới</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">ADMIN</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="them_moi_san_pham.html" class="item-level-2-title">Thêm Sản Phẩm</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Sửa Thông Tin</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- b1 xây dụng layout cho item html + css -->
+    <div id="gio-hang" class="gio-hang">
+        <h1 class="tieuDe">Danh sách sản phẩm</h1>
+        <div class="item-gio-hang tieuDeItemGioHang">
+            <div class="hinhAnh">
+            </div>
+            <div class="ten">
+                <p> Sản Phẩm <p>
+            </div>
+            <div class="gia">
+                <p> Đơn Giá </p>
+            </div>
+            <div class="soLuong">
+                <p>Số Lượng</p>
+            </div>
+            <div class="tongTien">
+                <p>Tổng Tiền</p>
+            </div>
+            <div class="hanhDong">
+                <p>Thao Tác</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        Copyright by @Darker Shaw
+    </footer>
+
+
+    <!-- b2. giả lập hàm javascript để chuyển đổi -->
+    <script>
+        hienThiDanhSachItemGioHang();
+        // <!--viết hàm chuyển đổi danh sách đối tượng thành html -->
+        function chuyenDoiDanhSachItemGioHangSangHtml(danhSachItemGioHang) {
+            var htmlTong = '';
+            for (var i = 0; i < danhSachItemGioHang.length; i++) {
+                htmlTong = htmlTong + chuyenDoiTuongItemGioHangSangHTML(danhSachItemGioHang[i]);
+            }
+            return htmlTong;
+        }
+
+        function chuyenDoiTuongItemGioHangSangHTML(itemGioHang) {
+            // b1. chuyển từu idsanpham -> đối tượng sanpham
+            var sanPham = laySanPhamTheoId(itemGioHang.idSanPham);
+            console.log(sanPham);
+            // b2. khi có đ/t , thay thế
+            var tongTien = itemGioHang.soLuong * sanPham.tinhGiaBan();
+
+            var html = 
+                
+                ' <div id="item-gio-hang" class="item-gio-hang">  ' +
+                '<div class="hinhAnh">  ' +
+                '   <img src="' + sanPham.hinhAnh + '" alt="">  ' +
+                '</div>  ' +
+                '<div class="ten"> <p>' + sanPham.ten + '</p>  </div>' +
+                '<div class="gia">  ' +
+                '   <span class="giaBan">' + themChamVaoSo(sanPham.tinhGiaBan()) + 'Đ</span>  ' +
+                '   <span class="giaGoc">' + themChamVaoSo(sanPham.giaGoc) + 'Đ</span>  ' +
+                '</div>  ' +
+                '   <input type="number" class="soLuong" value="' + itemGioHang.soLuong + '">  ' +
+                '<div class="tongTien"><p>' + themChamVaoSo(tongTien) + 'Đ</p>  </div>' +
+                '<div class="hanhDong">                   ' +
+                '<i class="fas fa-trash-alt" onclick="onclickXoa()"></i>  ' +
+                '</div>  ' +
+                '</div>  ';
+
+            return html;
+        }
+
+        // b4 truy cập node cần hiển thị và găn html vào node đó
+        function hienThiDanhSachItemGioHang() {
+            // b1. load d/s từ local storage
+            var danhSachItemGioHang = layDanhSachItemGioHang();
+            // b2.chuyển d/s item giỏ hảng sang html
+            var HTML = chuyenDoiDanhSachItemGioHangSangHtml(danhSachItemGioHang);
+            // b3.truy cập node giohang để in ra 
+            var nodeGioHang = document.getElementById('gio-hang');
+            nodeGioHang.innerHTML = nodeGioHang.innerHTML + HTML;
+        }
+        function onclickXoa(idSanPham) {
+            // Xóa node hiển thị
+            let nodeSanPham = event.target.parentElement;
+            console.log(nodeSanPham.parentElement);
+            nodeSanPham.parentElement.remove();
+            // Xóa data
+            let dataGioHang = layDanhSachItemGioHang("danhSachItemGioHang");
+            let vitri = dataGioHang.findIndex(sp => sp.idSanPham == idSanPham);
+            dataGioHang.splice(vitri, 1);
+            luuDanhSachItemGioHangVaoLocalStorege(dataGioHang, "danhSachItemGioHang");
+        }
+    </script>
+
+
+
+
+    <!-- b5. xỷ lý hàm chuyển đổi đối tượng -->
+
+</body>
+
+</html>

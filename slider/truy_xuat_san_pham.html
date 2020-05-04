@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="hoTro.js"></script>
+    <script src="sanPham.js"></script>
+</head>
+<body>
+    <input type="text" id="idSanPham" placeholder="Nhập ID sản phẩm">
+    <button onclick="onClickTimKiemSanPham()" class="btn">Tìm Kiếm</button>
+    <div class="ket-qua-tim-kiem">
+
+    </div>
+    <script>
+        function onClickTimKiemSanPham(){
+            var nodeIdSanPham = document.getElementById('idSanPham');
+            var idSanPham = nodeIdSanPham.value;
+            console.log('id của san phẩm :'+idSanPham);
+
+            var sanPham = truyXuatSanPhamTheoId(idSanPham);
+            console.log('thông tin sản phẩm'+sanPham);
+
+            var HTML = chuyenDoiTuongSanPhamThanhHTML(sanPham);
+
+            var nodeKetQuaTimKiem = document.getElementById('ket-qua-tim-kiem');
+            nodeKetQuaTimKiem.innerHTML = HTML;
+        }
+    </script>
+</body>
+</html>

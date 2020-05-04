@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng chức năng thêm mới sản phẩm</title>
+    <link rel="stylesheet" href="themSp.css">
+    <script src="hoTro.js"></script>
+    <script src="sanPham.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div id="search">
+        <div class="box"></div>
+    </div>
+    <nav id="nav-bar">
+        <ul class="menu-level-1">
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">ĐIỆN THOẠI</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Apple iPhone</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">SamSung</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Xiaomi</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Oppo</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">TABLE</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Apple iPad</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">SamSung</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">MACBOOK</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Macbook Air</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Macbook pro</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Surface</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">SMART WATCH</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Apple</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">SamSung</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">MÁY CŨ</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Điện thoại</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Table</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Macbook </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">DỊCH VỤ</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Bảo hành, bảo hiểm</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Trả góp</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Thu cũ đổi mới</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-level-1">
+                <a href="#" class="item-level-1-title">ADMIN</a>
+                <ul class="menu-level-2">
+                    <li class="item-level-2">
+                        <a href="them_moi_san_pham.html" class="item-level-2-title">Thêm Sản Phẩm</a>
+                    </li>
+                    <li class="item-level-2">
+                        <a href="#" class="item-level-2-title">Sửa Thông Tin</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="them-moi-san-pham">
+        <label for="hinhAnh">Hình ảnh sản phẩm</label>
+        <input type="text" id="hinhAnh">
+
+        <label for="ten">Tên sản phẩm</label>
+        <input type="text" id="ten">
+
+        <label for="giaGoc">Giá gốc sản phẩm</label>
+        <input type="number" id="giaGoc">
+
+        <label for="phanTramGiamGia">Phần trăm giảm giá (0-1)%</label>
+        <input type="number" id="phanTramGiamGia">
+
+        <label for="khuVuc">Khu vực</label>
+        <input type="text" id="khuVuc">
+
+        <button onclick="onClickTaoSanPham()">Tạo sản phẩm</button>
+    </div>
+
+    <footer>
+        Copyright by @Darker Shaw
+    </footer>
+
+
+    <script>
+        /*B1. Lấy danh sách sản phẩm trong LCS*/
+        /*lấy lên sẽ là dạng string nên phải parse thành danh sách JSON thành object*/
+        var danhSachSanPham = JSON.parse(localStorage.getItem('danhSachSanPham'));
+        if (danhSachSanPham == null) {
+            danhSachSanPham = new Array();
+        }
+        console.log(danhSachSanPham);
+
+
+        function hienThiHinhAnh() {
+            var hienThi = chuyenDanhSachDoiTuongSanPhamThanhHTML('hinhAnh');
+        }
+        /*NHIỆM VỤ:
+        1. lắng nghe ONCLICK khi nhấp vào button
+        2. lấy toàn bộ dữ liệu người dùn nhập vào
+        3. tạo ra toàn bộ sản phẩm*/
+
+
+        function onClickTaoSanPham() {
+            console.log('gọi hàm onClickTaoSanPham()');
+            /*Truy cập vào node*/
+            var nodeHinhAnh = document.getElementById('hinhAnh');
+            var hinhAnh = nodeHinhAnh.value;
+            console.log('Hình ảnh là: ' + hinhAnh);
+            nodeHinhAnh.value = '';
+
+            var nodeTen = document.getElementById('ten');
+            var ten = nodeTen.value;
+            console.log('Tên sản phẩm là: ' + ten);
+            nodeTen.value = '';
+
+            var nodeGiaGoc = document.getElementById('giaGoc');
+            var giaGoc = parseInt(nodeGiaGoc.value);
+            console.log('Giá gốc là: ' + giaGoc);
+            nodeGiaGoc.value = '';
+
+            var nodePhanTramGiamGia = document.getElementById('phanTramGiamGia');
+            var phanTramGiamGia = parseFloat(nodePhanTramGiamGia.value);
+            console.log('Phần trăm giảm giá là: ' + phanTramGiamGia);
+            nodePhanTramGiamGia.value = '';
+
+            var nodeKhuVuc = document.getElementById('khuVuc');
+            var khuVuc = nodeKhuVuc.value;
+            console.log('Khu vực: ' + khuVuc);
+            nodeKhuVuc.value = '';
+
+            /*Tạo ra đối tượng khi nhập liệu vào*/
+            var sanPham = taoDoiTuongSanPham(hinhAnh, ten, giaGoc, phanTramGiamGia, khuVuc);
+            console.log(sanPham);
+
+            console.log('Tên sản phẩm nhập vào là: ' + sanPham.ten + ' và gián bán sản phẩm là: ' + sanPham.tinhGiaBan());
+            /*ĐƯA SẢN PHẨM VÀO DANH SÁCH*/
+            danhSachSanPham.push(sanPham);
+            console.log('Danh sách sản phẩm là: ');
+            console.log(danhSachSanPham);
+
+            /*LƯU TRỮ DANH SÁCH SẢN PHẨM XUỐNG LCS*/
+            var jsonDanhSachSanPham = JSON.stringify(danhSachSanPham);
+            localStorage.setItem('danhSachSanPham', jsonDanhSachSanPham);
+
+            alert("Bạn đã thêm thành công sản phầm.");
+        }
+
+    </script>
+</body>
+
+</html>

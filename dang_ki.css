@@ -1,0 +1,60 @@
+.ttcanhan{
+	border: 1px solid rgb(255, 145, 145);
+    box-shadow: 2px 2px 4px rgb(180, 12, 12);
+    padding: 20px;
+    margin: auto;
+    max-width: 1100px;
+    margin-top: 50px;
+}
+
+.ttcanhan input,.ttcanhan1 input{
+	height: 30px;
+	width: 800px;
+	padding-left: 10px;
+	margin-left: 100px;
+}
+#FullName{
+	margin-left: 66px;
+}
+#Email{
+	margin-left: 90px;
+}
+#Password{
+	margin-left: 65px;
+}
+#add{
+    margin-left: 80px;
+}
+#Telephone{
+	margin-left: 43px;
+}
+.k_ttcanhan{
+	width: 1140px;
+	height: 40px;
+	margin-bottom: 25px;
+}
+
+label[for = FullName]{
+	padding-left: 70px;
+	line-height: 30px;
+}
+.k_ttcanhan select {
+	height: 30px;
+	width: 965px;
+	float: right;
+	padding-left: 10px;
+}
+input[type=button] {
+	width: 500px;
+	height: 50px;
+	background-color: rgb(151, 37, 37);
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#submit{
+	margin-left: 250px;
+}

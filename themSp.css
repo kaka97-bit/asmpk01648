@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --primary-color : #F7452E;
+    --primary-dark-color : #c53724;
+    --primary-light-color : #f68A57;
+    --dark-color : #222;
+    --light-color : #fff;
+}
+.tt-san-pham{
+    width: 50%;
+    border: 1px solid rgb(104, 103, 103);
+    margin: auto;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 2px 2px 5px #444;
+}
+.them-moi-san-pham {
+    width: 50%;
+    border: 1px solid rgb(104, 103, 103);
+    margin: auto;
+    padding: 30px;
+    margin-top: 50px;
+    box-shadow: 2px 2px 5px #444;
+}
+
+.them-moi-san-pham label,
+input {
+    width: 100%;
+    display: block;
+}
+
+.them-moi-san-pham label {
+    margin-top: 20px;
+}
+
+.them-moi-san-pham input {
+    margin-top: 5px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.them-moi-san-pham button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid rgb(247, 142, 142);
+    border-radius: 5px;
+    background-color: #f59b8f;
+    color: #fff;
+}
+
+.them-moi-san-pham button:hover {
+    background-color: rgb(252, 63, 38);
+}
+footer{
+    padding: 10px 20px;
+    background-color: var(--dark-color);
+    text-align: center;
+    color: var(--light-color) ;
+    margin-top: 50px;
+}

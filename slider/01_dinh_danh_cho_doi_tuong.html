@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>học về cách định danh đói tượng</title>
+</head>
+<body>
+    <!-- địng danh dụng để xác định 1 đối tuonjg là duy nhật
+        1. trong d/s tất cả các đối tượng, thì định danh ra đ/t này kh trùng vs đ/t khác
+        2. định danh kh tahy đổi-->
+
+    <!-- mục tiêu: thêm sản phẩm vào giỏ hàng
+        1.tạo thêm thuộc tính để định danh từng đối tượng
+        2.xây dụng hàm để tạo ra mã định danh duy nhất
+     -->
+
+     <!-- chuẩn UUID có thư viện để sinh ra -->
+
+     <script>
+         for (var i = 0; i < 100; i++){
+             console.log(taoId());
+         }
+        // tạo ra 1 id duy nhất
+        function taoId(){
+
+            // lấy t/g hiện tại theo milisecond
+            var thoiGianHienTai = new Date().getTime();
+            var id = Math.random().toString().substr(2,10) + " " + String(thoiGianHienTai);
+            
+            return id;
+        }
+     </script>
+</body>
+
+</html>

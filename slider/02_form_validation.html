@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .form{
+            width: 30%;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 4px #ddd;
+            padding: 30px;
+            border-radius: 5px;
+            margin: auto;
+        }
+        .form label, input, button {
+            width: 100%;
+            display: block;
+            margin-top: 10px;
+        }
+        .form input, button{
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form .error{
+            font-size: 12px;
+            height: 12px;
+            line-height: 12px;
+            color: red;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+
+        <label for="hoTen">họ tên</label>
+        <input type="text" id="hoTen">
+        <label id="thongBaoLoiHoten" for="hoTen" class="error"></label>
+
+        <label for="soDienThoai">Số điện thoại</label>
+        <input type="number" id="soDienThoai">
+        <label id="thongBaoLoiSoDienThoai" for="soDienThoai" class="error"></label>
+
+        <label for="diaChi">Địa chỉ</label>
+        <input type="text" id="diaChi">
+        <label id="thongBaoLoiDiaChi" for="diaChi" class="error"></label>
+
+        <button onclick="dangKi()" class="btn">Đăng kí</button>
+    </div>
+
+    <script>
+        function dangKi(){
+            if (kiemTraFormDangKi() == true ){
+                console.log("thực hiện đăng kí");
+            }
+        }
+
+        // kiểm tra form đk hợp lệ hay kh
+        function kiemTraFormDangKi(){
+            var hopLe = true;
+            // kiểm tra
+            // b1.truy cập node
+            var nodeHoTen = document.getElementById("hoTen");
+            var nodeSoDienThoai = document.getElementById("soDienThoai");
+            var nodeDiaChi = document.getElementById("diaChi");
+            var hoTen = nodeHoTen.value;
+            var soDienThoai = nodeSoDienThoai.value;
+            var diaChi = nodeDiaChi.value;
+            console.log("Họ tên là : " + hoTen);
+            console.log("Số điện thoại là : " + soDienThoai);
+
+            var nodeThongBaoLoiHoten = document.getElementById("thongBaoLoiHoTen");
+            var nodeThongBaoLoiSoDienThoai = document.getElementById("thongBaoLoiSoDienThoai");
+            var nodeThongBaoLoiDiaChi = document.getElementById("thongBaoLoiDiaChi");
+            nodeThongBaoLoiHoten.innerHTML = '';
+            nodeThongBaoLoiSoDienThoai.innerHTML = '';
+            nodeThongBaoLoiDiaChi.innerHTML = '';
+            
+
+
+            // b2.kiểm tra dữ liệu có hợp lệ kh
+            if (hoTen == null || hoTen.length <= 0){
+                nodeThongBaoLoiHoten.innerHTML = "họ ten không được để trống";
+                hopLe = false;
+            }
+
+            if (soDienThoai == null || soDienThoai.length < 10 || soDienThoai.length > 11){
+                nodeThongBaoLoiSoDienThoai.innerHTML = "số điện thoại không được để trống";
+                hopLe = false;
+            }
+
+            if (nodeDiaChi == null || diaChi.length > 5 || diaChi.length <50){
+                nodeThongBaoLoiDiaChi.innerHTML = "Địa chỉ không đúng";
+                hopLe = false;
+            }
+
+
+            return hopLe;
+        }
+    </script>
+</body>
+
+</html>
